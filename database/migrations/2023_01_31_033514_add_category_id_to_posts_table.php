@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('password_resets', function (Blueprint $table) {
-            $table->string('email')->primary();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
+        Schema::table('posts', function (Blueprint $table) {
+            $table->foreignId('category_id')->constrained();   
+        //'category_id' は 'categoriesテーブル' の 'id' を参照する外部キーです
         });
     }
 
@@ -27,6 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('password_resets');
+        Schema::table('posts', function (Blueprint $table) {
+            $table->foreignId('category_id')->constrained();  
+            //
+        });
     }
 };

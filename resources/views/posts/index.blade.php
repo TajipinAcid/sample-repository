@@ -11,6 +11,9 @@
     <body>
         <h1>Blog Name</h1>
         <a href="/posts/create">create</a>
+        <!--Postインスタンスのプロパティとしてカテゴリー名を参照-->
+        <a href="">{{ $post->category->name }}</a>
+        
         <div class='posts'>
             @foreach ($posts as $post)
                 <div class='post'>
