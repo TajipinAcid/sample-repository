@@ -25,6 +25,4 @@
             <a href="/">戻る</a>
         </div>
     </body>
-    <!--Postインスタンスのプロパティとしてカテゴリー名を参照-->
-        <a href="">{{ $post->category->name }}</a>
 </html>
