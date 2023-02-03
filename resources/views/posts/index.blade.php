@@ -16,6 +16,10 @@
             @foreach ($posts as $post)
                 <div class='post'>
                     <a href="/posts/{{ $post->id }}"><h2 class='title'>{{ $post->title }}</h2></a>
+                              
+                              <!--Postインスタンスのプロパティとしてカテゴリー名を参照-->
+                    <a href="">{{ $post->category->name }}</a>
+        
                     <p class='body'>{{ $post->body }}</p>
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                         @csrf
@@ -28,6 +32,7 @@
         <div class='paginate'>
             {{ $posts->links() }}
         </div>
+        
         <script>
             function deletePost(id) {
                 'use strict'
