@@ -14,7 +14,7 @@
         </h1>
         
                 <!--Postインスタンスのプロパティとしてカテゴリー名を参照-->
-            <a href="">{{ $post->category->name }}</a>
+           <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
         
         <div class="content">
             <div class="content__post">
