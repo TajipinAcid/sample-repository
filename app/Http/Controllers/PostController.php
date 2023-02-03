@@ -11,18 +11,20 @@ class PostController extends Controller
 {
     public function index(Post $post)
     {
+        dd($post);
         return view('posts/index')->with(['posts' => $post->getPaginateByLimit(5)]);
     }
     
     public function show(Post $post)
     {
+        dd($post);
         return view('posts/show')->with(['post' => $post]);
      //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
     }
     
-   public function create()
+      public function create(Category $category)
     {
-        return view('posts/create');
+        return view('posts/create')->with(['categories' => $category->get()]);
     }
     
     public function store(PostRequest $request, Post $post)

@@ -12,6 +12,10 @@
         <h1 class="title">
             {{ $post->title }}
         </h1>
+        
+                <!--Postインスタンスのプロパティとしてカテゴリー名を参照-->
+            <a href="">{{ $post->category->name }}</a>
+        
         <div class="content">
             <div class="content__post">
                 <h3>本文</h3>
@@ -23,6 +27,7 @@
         </div>
         <div class="footer">
             <a href="/">戻る</a>
+            
         </div>
     </body>
 </html>
